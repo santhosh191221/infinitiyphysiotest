@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reviews – Infinity Physio and Rehab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo1.jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ML8STEPMHR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ML8STEPMHR');
+</script>
+  <style>
+  .review-section { text-align:center; margin-bottom:40px; }
+  .review-slideshow { max-width: 600px; margin: 0 auto; position: relative; }
+  .review-slide { display: none; padding: 20px; }
+  .review-slide.active { display: block; }
+  .google-review-btn {
+    display:inline-block;
+    margin:16px 0;
+    padding:10px 18px;
+    background:#0a2472;
+    border-radius:6px;
+    border:1px solid #0a2472;
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .google-review-btn:hover {
+    background:#143fa3;
+    color:#fff;
+  }
+  .google-review-btn img { width:32px; vertical-align:middle; margin-right:8px; }
+  .review-controls { margin-top: 10px; }
+  .review-controls button {
+    margin: 0 5px;
+    padding: 4px 10px;
+    background: #0a2472;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .review-controls button:hover {
+    background: #143fa3;
+  }
+
+  /* === Navbar Styles === */
+  .navbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; position: relative; }
+  .nav-logo { display: flex; align-items: center; }
+  .main-nav-bar { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; transition: left 0.3s; }
+  .main-nav-bar li { margin: 0; }
+  .main-nav-bar a.active { color: #1a6f5a; font-weight: bold; }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: 16px;
+    z-index: 200;
+  }
+  .nav-social { display: flex; gap: 10px; }
+  .main-nav-bar .close-btn { display: none; } /* Hide close button on desktop */
+
+  @media (max-width: 700px) {
+    .nav-toggle {
+      display: block;
+      margin-left: 8px; /* Adjust this value to change position */
+      background: #000;
+      top: 12px;
+      padding: 3px 10px; /* Reduced padding */
+    font-size: 1.6rem; /* Reduced font size */
+    }
+    /* Center the logo in mobile view */
+    .nav-logo {
+      display: none; /* Hide the main logo on mobile */
+    }
+    .nav-logo .logo {
+      height: 40px;
+      width: 40px;
+    }
+    .main-nav-bar {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      width: 70vw;
+      height: 100vh;
+      background: #131a35;
+      box-shadow: 2px 0 12px #ddd;
+      padding-top: 60px;
+      gap: 0;
+      transition: left 0.3s ease-in-out;
+      z-index: 201;
+    }
+    .main-nav-bar.active {
+      left: 0;
+    }
+    .main-nav-bar li {
+      padding: 18px 24px;
+      border-bottom: 1px solid #4a4e60;
+    }
+    .nav-social {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 12px 16px;
+      z-index: 201;
+    }
+    .infinity-nav-icon {
+      display: inline-block; /* Show on mobile */
+    }
+    .infinity-nav-icon img {
+      width: 40px;
+      height: 38px;
+    }
+    .navbar {
+      position: fixed;
+      z-index: 201;
+    }
+    .main-nav-bar .close-btn {
+      display: block;
+      position: absolute;
+      top: 75px;
+      right: 35px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 300;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar" style="padding: 0 34px;">
+    <div class="nav-logo">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+    <ul class="main-nav-bar">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="vision.html">About Us</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+      <li><a href="our-services.html">Our Services</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+    </ul>
+    <!-- <div class="nav-logo-mobile">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div> -->
+    <div class="nav-social">
+            <a href="index.html" class="nav-icon infinity-nav-icon">
+        <img src="logo1.jpeg" alt="Infinity Logo" />
+      </a>
+      <a href="https://wa.me/919600619608" target="_blank" class="nav-icon whatsapp-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon instagram-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/in/infinity-physio-and-rehab-398389384/" target="_blank" class="nav-icon linkedin-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon pt-nav">
+        <img src="pt.jpg" alt="Physiotherapy" />
+      </a>
+
+    </div>
+  </nav>
+
+  <main style="padding: 0 34px;">
+    <section>
+        <br>
+        <br>
+        <br>
+      <h2>Reviews</h2>
+      <div class="review-section">
+        <p>See what our patients say about Infinity Physio and Rehab!</p>
+        <a href="https://g.page/r/CfolFhQlZVeLEBI/review" target="_blank" class="google-review-btn">
+          <img src="review.png" alt="Google Reviews">
+          Read Our Google Reviews
+        </a>
+        <div class="review-slideshow">
+          <div class="review-slide active">
+            <blockquote>
+              "I had severe neck pain due to my work on the computer system. So I contacted Infinity and they suggested some simple exercises. My neck pain has gradually been reduced. Thank you very much."
+            </blockquote>
+            <cite>- Kaviyarasu</cite>
+          </div>
+          <div class="review-slide">
+            <blockquote>
+              "I had a good experience with my physiotherapist Keerthana during 10 days of treatment. She explained the causes of my pain and guided me through exercises with patience. Her focus was on healing through exercises rather than just using machines, which I appreciated. She also gave helpful tips for long-term care. She was accommodating, soft-spoken, and friendly, making the sessions comfortable. I'm satisfied with her service and would recommend her to anyone needing physiotherapy care. Thank you for the good service!"
+            </blockquote>
+            <cite>- Mrs Fathima</cite>
+          </div>
+          <div class="review-slide">
+            <blockquote>
+              "I had pain in my right shoulder for the past 8 years, and I received physiotherapy at Infinity Physio and Rehab under the guidance of Dr. Tamilvasan. Physiotherapy has really helped by reducing my pain, improving my flexibility, and guiding me with useful exercises for long-term relief."
+            </blockquote>
+            <cite>- Mr Mathi</cite>
+          </div>
+        </div>
+        <div class="review-controls">
+          <button onclick="plusReview(-1)">&#8592; Prev</button>
+          <button onclick="plusReview(1)">Next &#8594;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Infinity Physio and Rehab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple review slideshow
+    let reviewIndex = 0;
+    const slides = document.getElementsByClassName("review-slide");
+    function showReview(n) {
+      for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
+      slides[n].classList.add("active");
+    }
+    function plusReview(n) {
+      reviewIndex += n;
+      if (reviewIndex < 0) reviewIndex = slides.length - 1;
+      if (reviewIndex >= slides.length) reviewIndex = 0;
+      showReview(reviewIndex);
+    }
+    // Auto-advance every 5 seconds
+    setInterval(() => { plusReview(1); }, 5000);
+    // Initialize
+    showReview(reviewIndex);
+  </script>
+  <script>
+    // Hamburger menu toggle for mobile
+    document.addEventListener("DOMContentLoaded", function () {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navBar = document.querySelector('.main-nav-bar');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Function to close the menu
+      function closeMobileMenu() {
+        navBar.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // 1. Open/close menu with the hamburger toggle
+      navToggle.addEventListener('click', function () {
+        const expanded = navBar.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', expanded);
+      });
+
+      // 2. Close menu with the new 'X' button
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMobileMenu);
+      }
+
+      // 3. Close menu when a nav link is clicked
+      navBar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // 4. Close menu when clicking outside of it
+      document.addEventListener('click', function (event) {
+        const isClickInsideNav = navBar.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+        
+        if (navBar.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Physio and Rehab™</title>
+  <link rel="icon" type="image/png" href="logo1.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ML8STEPMHR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ML8STEPMHR');
+</script>
+  <style>
+    /* === Navbar Styles === */
+    .navbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; position: relative; }
+    .nav-logo { display: flex; align-items: center; }
+    .main-nav-bar { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; transition: left 0.3s; }
+    .main-nav-bar li { margin: 0; }
+    .main-nav-bar a.active { color: #1a6f5a; font-weight: bold; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      top: 10px;
+      font-size: 2em;
+      cursor: pointer;
+      margin-left: 16px;
+      z-index: 200;
+      /* Color is handled by styles.css, but can be overridden if needed */
+    }
+    .nav-social { display: flex; gap: 10px; }
+    .main-nav-bar .close-btn { display: none; } /* Hide close button on desktop */
+
+    @media (max-width: 700px) {
+      .nav-toggle {
+        display: block;
+        margin-left: 8px; /* Adjust this value to change position */
+        background: #000;
+       padding: 3px 10px; /* Reduced padding */
+    font-size: 1.6rem; /* Reduced font size */
+      }
+      .nav-logo {
+        display: none; /* Hide the main logo on mobile */
+      }
+      .nav-logo .logo {
+        height: 40px;
+        width: 40px;
+      }
+      .main-nav-bar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: #131a35;
+        box-shadow: 2px 0 12px #ddd;
+        padding-top: 60px;
+        gap: 0;
+        transition: left 0.3s ease-in-out;
+        z-index: 201;
+      }
+      .main-nav-bar.active {
+        left: 0;
+      }
+      .main-nav-bar li {
+        padding: 18px 24px;
+        border-bottom: 1px solid #4a4e60;
+      }
+      .nav-social {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 12px 16px;
+        z-index: 201;
+      }
+      .infinity-nav-icon {
+        display: inline-block; /* Show on mobile */
+      }
+      .infinity-nav-icon img {
+        width: 40px;
+        height: 38px;
+      }
+      .navbar {
+        position: fixed;
+        z-index: 201;
+      }
+      .main-nav-bar .close-btn {
+        display: block;
+        position: absolute;
+        top: 75px;
+        right: 35px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 300;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+      }
+    }
+
+    @media (min-width: 769px) {
+  .outline-box:hover {
+    transform: translateY(-8px); /* Lifts the box up slightly */
+    box-shadow: 0 8px 40px rgba(0,0,0,0.65); /* Enhances the shadow */
+  }
+}
+
+.alt-text li {
+  font-size: 1.1em; /* Make font a little bigger */
+  font-weight: 600; /* Make text semi-bold */
+  transition: color 0.3s ease; /* Add transition for text color */
+  position: relative;
+  padding-left: 25px; /* Make space for the star */
+  list-style: none; /* Remove default bullet */
+  margin-bottom: 8px;
+}
+
+.alt-text li::before {
+  content: '⭐';
+  color: #FFD700; /* Golden color */
+  position: absolute;
+  left: 0;
+}
+
+    
+    /* FAQ Styles */
+    .faq-list { margin-top: 18px; }
+    .faq-question { width: 100%; background: none; border: none; text-align: left; font-size: 1.08em; font-weight: 600; padding: 16px 0 12px 0; cursor: pointer; outline: none; display: flex; align-items: center; justify-content: space-between; transition: background 0.2s; }
+    .faq-question:hover { background: #f3f3e7; }
+    .faq-answer { display: none; padding: 0 0 16px 0; font-size: 1em; color: #222; animation: fadeIn 0.3s; text-align: left; }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item .arrow { font-size: 1.2em; margin-left: 10px; transition: transform 0.2s; }
+    .faq-item.active .arrow { transform: rotate(90deg); }
+    .faq-stars .faq-star { color: #FFD700; font-size: 1.1em; margin-right: 6px; vertical-align: middle; }
+    .faq-stars { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 10px; }
+    .faq-stars div { width: 100%; justify-content: flex-start; text-align: left; max-width: 500px; display: flex; align-items: flex-start; margin-bottom: 6px; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .popup-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 16px auto;
+      border: 4px solid #d6b999; /* Gold border to match theme */
+    }
+
+    /* Birthday Popup Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 100000;
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 24px 32px;
+      border-radius: 12px;
+      max-width: 550px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      animation: fadeIn 0.5s ease;
+    }
+    .popup-content h3 { color: #131a35; margin-top: 0; }
+    .popup-content p { text-align: left; font-size: 1em; line-height: 1.6; }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+    }
+
+    /* Birthday Popup Trigger Button */
+    .birthday-trigger-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #d6b999; /* Gold color */
+      color: #131a35;
+      border: none;
+      border-radius: 50%;
+      font-size: 2em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+    .birthday-trigger-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro Video -->
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Intro Image for Mobile -->
+  <video id="introImage" autoplay muted playsinline>
+    <source src="mobile_intro.mp4" type="video/mp4">
+  </video>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+    <ul class="main-nav-bar">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="vision.html">About Us</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+      <li><a href="our-services.html">Our Services</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+    </ul>
+    <!-- <div class="nav-logo-mobile">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div> -->
+    <div class="nav-social">
+        <a href="index.html" class="nav-icon infinity-nav-icon">
+        <img src="logo1.jpeg" alt="Infinity Logo" />
+      </a>
+      <a href="https://wa.me/919600619608" target="_blank" class="nav-icon whatsapp-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon instagram-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+            <a href="https://www.linkedin.com/in/infinity-physio-and-rehab-398389384/" target="_blank" class="nav-icon linkedin-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon pt-nav">
+        <img src="pt.jpg" alt="Physiotherapy" />
+      </a>
+    </div>
+    </div>
+  </nav>
+
+  <header class="hero-section" id="heroSection">
+    <div class="hero-slideshow">
+      <div class="slide fade" style="display:block;">
+        <img src="home_img.jpeg" alt="Main Slide">
+      </div>
+    </div>
+    <div class="hero-overlay">
+      <span class="hero-brand">Infinity Physio &amp; Rehab™</span>
+      <h1>Expert Physiotherapy<br>at Your Home</h1>
+      <p>Heal &bull; Rehabilitate &bull; Regain Mobility</p>
+      <a href="https://wa.me/919600619608?text=Hello%20Infinity%20Physio%20and%20Rehab,%0AI%20would%20like%20to%20book%20an%20appointment.%0APlease%20share%20available%20slots."
+         target="_blank"
+         class="cta-btn whatsapp-btn">
+         Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <main id="content" style="padding: 0 25px;">
+       <section>
+      <h2>Welcome to Infinity Physio and Rehab™</h2>
+      <p>
+At Infinity Physio and Rehab™, we are dedicated to helping you achieve your best health and mobility. We currently provide home-based physiotherapy services across Chennai and expert online consultations. We offer rehabilitation services for all ages and conditions      </p>
+      <p>
+      <strong>Your Recovery Movement Begins</strong><br>
+      Our expert team blends cutting-edge therapies
+    </p>
+         <div class="home-highlights">
+        <div class="highlight-card">
+          <img src="electro.jpeg" alt="Electrotherapy" style="width:100%;max-width:200px;border-radius:8px;margin-bottom:16px;">
+          <h3>Electrotherapy</h3>
+          <ul>
+      <li>Pain relief—Reduces aches, spasms, and nerve pain safely.</li>
+      <li>Speeds healing—Decreases swelling and accelerates tissue repair.</li>
+      <li>Muscle stimulation—Restores strength and function in weak muscles.</li>
+      <li>Improves circulation—Boosts blood flow to aid recovery.</li>
+    </ul>
+        </div>
+        <div class="highlight-card">
+          <img src="exers.jpeg" alt="Personalised exercise" style="width:100%;max-width:200px;border-radius:8px;margin-bottom:16px;">
+          <h3>Personalized Exercise</h3>
+    <ul>
+      <li>Custom plans—Exercises designed for your unique needs and goals.</li>
+      <li>Progress tracking—Adjusts as you improve, for steady results.</li>
+      <li>Home support—Clear, digital guidance for correct exercise at home.</li>
+      <li>Independence focus—Teaches lasting habits for health and mobility.</li>
+    </ul>
+        </div>
+        <div class="highlight-card">
+          <img src="hands-1.jpeg" alt="Hands-On Therapy" style="width:100%;max-width:200px;border-radius:8px;margin-bottom:16px;">
+          <h3>Hands-On Therapy</h3>
+          <ul>
+      <li>Direct relief—Manual techniques reduce pain and stiffness.</li>
+      <li>Restores movement—Improves joint and muscle flexibility.</li>
+      <li>Builds confidence—Hands-on care boosts mental and physical recovery.</li>
+      <li>Enhances other treatments—Prepares your body for exercise and electrotherapy.</li>
+    </ul>
+        </div>
+        <div class="highlight-card">
+          <img src="patent.jpeg" alt="Patient Education" style="width:100%;max-width:200px;border-radius:8px;margin-bottom:16px;">
+            <h3>Patient Education</h3>
+    <ul>
+      <li>Clear explanations—Simple details about your condition and care.</li>
+      <li>Self-management—Teaches strategies for pain, posture, and daily life.</li>
+      <li>Visual learning—Uses images and demos for easy understanding.</li>
+      <li>Empowers choice—Helps you make informed decisions about your health.</li>
+    </ul>
+        </div>
+      </div>
+    <section>
+  <h3><strong>Regain Strength  * Restore Function * Redefine Your Limits</strong></h3>
+  <p>
+    We support you through pain, injury, or post-surgical challenges with comprehensive care.<br>
+    With a strong focus on evidence-based practices, we tailor our treatments to meet your unique needs, ensuring faster recovery and long-term wellness.<br>
+    Our holistic approach not only relieves pain but also enhances mobility, strength, and overall quality of life.<br>
+    <strong>Join us for a transformative healing experience!</strong>
+  </p>
+</section>
+<section class="alt-section">
+  <div class="alt-content outline-box">
+    <div class="alt-text">
+      <h3>Online Consultation</h3>
+      <ul>
+        <li>Virtual sessions via video call</li>
+        <li>Easy scheduling and access</li>
+        <li>Professional guidance remotely</li>
+        <li>Follow-up and progress tracking</li>
+      </ul>
+    </div>
+    <div class="alt-image">
+      <img src="online.jpeg" alt="Online Consultation">
+    </div>
+  </div>
+</section>
+<section class="alt-section">
+  <div class="alt-content reverse outline-box">
+    <div class="alt-text">
+      <h3>Home Care Physiotherapy</h3>
+      <ul>
+        <li>Convenient sessions at your home</li>
+        <li>Personalized treatment plans</li>
+        <li>Expert therapists visiting you</li>
+        <li>Support for all ages and conditions</li>
+      </ul>
+    </div>
+    <div class="alt-image">
+      <img src="home-care.jpeg" alt="Home Care Physiotherapy">
+    </div>
+  </div>
+</section>
+        <section>
+              </section>
+    <section class="impact-section">
+      <h2>Our Impact</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <span class="impact-number">250+</span>
+          <p>Cases Treated</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">1500+</span>
+          <p>Physiotherapy Sessions Delivered</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">5+</span>
+          <p>Medical Collaborations</p>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">150+</span>
+          <p>Satisfied Clients</p>
+        </div>
+      </div>
+    </section>
+      <h3>Reviews</h3>
+      <div class="review-section" style="text-align:center; margin-bottom:40px;">
+        <p>See what our patients say about Infinity Physio and Rehab!</p>
+        <a href="https://g.page/r/CfolFhQlZVeLEBI/review" target="_blank" class="google-review-btn">
+          <img src="review.png" alt="Google Reviews" style="width:32px;vertical-align:middle;margin-right:8px;">
+          Read Our Google Reviews
+        </a>
+      </div>
+    </section>
+      <section id="appointment-section">
+                <h2>Book an Appointment</h2>
+                <form id="appointment-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="message">Write Your Messages (about condition and inquiries):</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit">Book an Appointment</button>
+                </form>
+                <p id="form-status"></p>
+            </section>
+  <section id="faq-section" style="max-width:900px;margin:40px auto 60px auto;padding:24px;background:#fafbfc;border-radius:10px;">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        1. What is Physiotherapy?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        Physiotherapy is a healthcare science that helps people reduce pain, restore mobility, and improve overall function after injury, illness, or surgery. It combines exercises, manual therapy, and lifestyle advice to promote recovery and prevent recurrence.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        2. Do I need a doctor’s referral to start physiotherapy?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        No, a referral is not mandatory. You can book directly with us. However, sharing your medical reports or previous prescriptions helps us design a more effective treatment plan.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        3. How does an online consultation work?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        Online consultations are conducted over a secure video call. During the session, your physiotherapist will:
+        <div class="faq-stars center-stars">
+          <div><span class="faq-star">&#11088;</span> Assess your condition through guided movement tests</div>
+          <div><span class="faq-star">&#11088;</span> Explain your diagnosis in simple terms</div>
+          <div><span class="faq-star">&#11088;</span> Demonstrate exercises and self-care techniques</div>
+          <div><span class="faq-star">&#11088;</span> Provide a structured home program</div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        4. What are the benefits of home care physiotherapy?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-stars center-stars">
+          <div><span class="faq-star">&#11088;</span> Treatment at your convenience and comfort</div>
+          <div><span class="faq-star">&#11088;</span> Saves travel time and reduces stress, especially for elderly or post-surgery patients</div>
+          <div><span class="faq-star">&#11088;</span> One-on-one personalized attention</div>
+          <div><span class="faq-star">&#11088;</span> Family members can be trained to support recovery</div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        5. How many sessions will I need?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        The number of sessions depends on your condition and recovery goals. For minor injuries, a minimum of 5 sessions is generally recommended. Chronic or post-surgical cases may require longer treatment plans, which will be discussed after your first assessment.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        6. Is physiotherapy painful?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        Physiotherapy is designed to relieve pain, not cause it. Some techniques or exercises may create mild temporary discomfort, but all sessions are conducted safely and adapted to your comfort level.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        7. What makes Infinity Physio & Rehab different?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-stars center-stars">
+          <div><span class="faq-star">&#11088;</span> Evidence-based and personalized treatment plans</div>
+          <div><span class="faq-star">&#11088;</span> Options for online consultation and home visits</div>
+          <div><span class="faq-star">&#11088;</span> Focus on long-term recovery and prevention, not just temporary relief</div>
+          <div><span class="faq-star">&#11088;</span> Patient education is prioritized so you understand your condition and progress</div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        8. How can I prepare for my first session?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-stars center-stars">
+          <div><span class="faq-star">&#11088;</span> Wear comfortable clothing that allows free movement</div>
+          <div><span class="faq-star">&#11088;</span> Keep your medical records, X-rays, or MRI reports ready (if any)</div>
+          <div><span class="faq-star">&#11088;</span> Be prepared to discuss your lifestyle, daily activities, and goals</div>
+          <div><span class="faq-star">&#11088;</span> Stay open to learning and actively participating in your recovery</div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        9. How soon will I start seeing results?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        Many patients notice improvements within the first few sessions, such as reduced pain and better mobility. Long-term recovery depends on consistency, following home exercise programs, and the complexity of your condition.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        10. Do you provide follow-up support after sessions?
+        <span class="arrow">&#9654;</span>
+      </button>
+      <div class="faq-answer">
+        Yes. We provide follow-up guidance to ensure your recovery continues between sessions. This may include exercise reminders, lifestyle tips, and progress tracking. Patients can also clarify doubts through scheduled online check-ins.
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Infinity Physio and Rehab. All rights reserved.</p>
+  </footer>
+
+<!-- <div id="birthdayPopup" class="modal-overlay">
+    <div class="popup-content">
+      <span class="popup-close">&times;</span>
+      <img src="hbd.jpeg" alt="Infinity Physio and Rehab" class="popup-image">
+      <p>Happy Birthday to our CEO Sir and My Partner!</p>
+      <p>I’ve seen the struggles, the growth, and the happiness we’ve shared on this journey.
+      Without you, Infinity Physio and Rehab wouldn’t be possible.
+      Thank you for being the backbone of our vision and the strength behind every step we take.</p>
+      <p>With you, I am never alone — and I will always be with you.
+      Together, we build something greater every single day.</p>
+      <p>Wishing you a year filled with success, health, and endless joy.<br>
+      ✨💙</p>
+    </div>
+  </div> -->
+
+      <!-- Birthday Popup Trigger Button
+    <button id="birthdayPopupButton" class="birthday-trigger-btn">
+      🎉
+    </button> -->
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // --- Intro splash screen logic ---
+      const introVideo = document.getElementById('introVideo');
+      const introImage = document.getElementById('introImage');
+      const birthdayPopup = document.getElementById('birthdayPopup');
+      const isMobile = window.innerWidth <= 768;
+
+      if (isMobile) {
+        if (introVideo) introVideo.style.display = 'none'; // Hide video on mobile
+        if (introImage) {
+          setTimeout(() => {
+            introImage.style.opacity = '0';
+            setTimeout(() => { introImage.style.display = 'none'; }, 1000); // Hide after fade
+          }, 3000); // 3 seconds for image
+        }
+      } else {
+        if (introImage) introImage.style.display = 'none'; // Hide image on desktop
+        if (introVideo) {
+          setTimeout(() => {
+            introVideo.style.opacity = '0';
+            setTimeout(() => { introVideo.style.display = 'none'; }, 1000); // Hide after fade
+          }, 3000); // 5 seconds for video
+        }
+      }
+
+      // FAQ expand/collapse
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const item = btn.closest('.faq-item');
+          item.classList.toggle('active');
+          document.querySelectorAll('.faq-item').forEach(function(other) {
+            if (other !== item) other.classList.remove('active');
+          });
+        });
+      });
+
+      // Form submission to WhatsApp
+      const form = document.getElementById("appointment-form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const whatsappMessage =
+            `Appointment Request:\n` +
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Phone: ${phone}\n` +
+            `Message: ${message}`;
+          const whatsappNumber = "919600619608";
+          const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+          window.open(url, "_blank");
+        });
+      }
+
+      // Hamburger menu toggle logic
+      const navToggle = document.querySelector('.nav-toggle');
+      const navBar = document.querySelector('.main-nav-bar');
+      const closeBtn = document.querySelector('.close-btn');
+
+      function closeMobileMenu() {
+        navBar.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      navToggle.addEventListener('click', function () {
+        const expanded = navBar.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', expanded);
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMobileMenu);
+      }
+
+      navBar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      document.addEventListener('click', function (event) {
+        const isClickInsideNav = navBar.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+        
+        if (navBar.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+          closeMobileMenu();
+        }
+      });
+            const birthdayTriggerBtn = document.getElementById('birthdayPopupButton');
+      if (birthdayTriggerBtn) {
+        birthdayTriggerBtn.addEventListener('click', () => {
+          showBirthdayPopup();
+        });
+      }
+      
+      function showBirthdayPopup() {
+        if (birthdayPopup) {
+          birthdayPopup.style.display = 'flex';
+          document.body.classList.add('modal-open');
+        }
+      }
+
+      // Birthday popup close logic
+      const popupCloseBtn = document.querySelector('.popup-close');
+      if (popupCloseBtn) {
+        popupCloseBtn.addEventListener('click', () => {
+          if (birthdayPopup) birthdayPopup.style.display = 'none';
+          document.body.classList.remove('modal-open');
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>

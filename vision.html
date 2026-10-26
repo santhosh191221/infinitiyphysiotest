@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vision – Infinity Physio and Rehab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo1.jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ML8STEPMHR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ML8STEPMHR');
+</script>
+  <style>
+    /* Page-specific styles */
+    .about-flex {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    .about-flex.reverse {
+      flex-direction: row-reverse;
+    }
+    .about-text, .about-image {
+      flex: 1 1 0;
+      text-align: center;
+    }
+    .about-image img {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px #eee;
+      display: block;
+      margin: 0 auto;
+    }
+    .about-text ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .about-text ul li {
+      margin-bottom: 8px;
+    }
+    /* .core-values-list {
+      text-align: center; 
+
+    }
+
+    @media (max-width: 800px) {
+      .core-values-list {
+        padding-left: 0;
+      }
+    }
+     */
+    /* === Navbar Styles === */
+    .navbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; position: relative; }
+    .nav-logo { display: flex; align-items: center; }
+    .main-nav-bar { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; transition: left 0.3s; }
+    .main-nav-bar li { margin: 0; }
+    .main-nav-bar a.active { color: #1a6f5a; font-weight: bold; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      margin-left: 16px;
+      z-index: 200;
+    }
+    .nav-social { display: flex; gap: 10px; }
+    .main-nav-bar .close-btn { display: none; } /* Hide close button on desktop */
+
+    @media (max-width: 800px) {
+      .about-flex, .about-flex.reverse {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .about-image img {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-toggle {
+        display: block;
+        margin-left: 8px; /* Adjust this value to change position */
+        background: #000;
+        top: 12px;
+        padding: 3px 10px; /* Reduced padding */
+    font-size: 1.6rem; /* Reduced font size */
+      }
+      .nav-logo {
+        display: none; /* Hide the main logo on mobile */
+      }
+      .nav-logo .logo {
+        height: 40px;
+        width: 40px;
+      }
+      .main-nav-bar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: #131a35;
+        box-shadow: 2px 0 12px #ddd;
+        padding-top: 60px;
+        gap: 0;
+        transition: left 0.3s ease-in-out;
+        z-index: 150;
+      }
+      .main-nav-bar.active {
+        left: 0;
+      }
+      .main-nav-bar li {
+        padding: 18px 24px;
+        border-bottom: 1px solid #4a4e60;
+      }
+      .nav-social {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 12px 16px;
+        z-index: 201;
+      }
+      .infinity-nav-icon {
+        display: inline-block; /* Show on mobile */
+      }
+      .infinity-nav-icon img {
+        width: 40px;
+        height: 38px;
+      }
+      .navbar {
+        position: fixed;
+        z-index: 201;
+      }
+      .main-nav-bar .close-btn {
+        display: block;
+        position: absolute;
+        top: 75px;
+        right: 35px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 300;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div style="padding: 0 34px;"> <!-- Add padding wrapper -->
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+    <ul class="main-nav-bar">
+      <button class="close-btn" aria-label="Close menu">&times;</button>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="vision.html" class="active">About Us</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+      <li><a href="our-services.html">Our Services</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+    </ul>
+    <!-- <div class="nav-logo-mobile">
+      <a href="index.html"><img src="logo1.jpeg" alt="Logo" class="logo"></a>
+    </div> -->
+    <div class="nav-social">
+      <a href="index.html" class="nav-icon infinity-nav-icon">
+        <img src="logo1.jpeg" alt="Infinity Logo" />
+      </a>
+      <a href="https://wa.me/919600619608" target="_blank" class="nav-icon whatsapp-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon instagram-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/in/infinity-physio-and-rehab-398389384/" target="_blank" class="nav-icon linkedin-nav">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://instagram.com/infinity_physio_and_rehab/" target="_blank" class="nav-icon pt-nav">
+        <img src="pt.jpg" alt="Physiotherapy" />
+      </a>
+      
+    </div>
+  </nav>
+
+    <section class="alt-section about-section">
+      <div class="alt-content">
+        <div class="about-text" style="margin-bottom:32px;">
+          <br>
+          <h2>About Us – Infinity Physio and Rehab</h2>
+          <p>
+            At Infinity Physio and Rehab, we believe physiotherapy is more than treatment—it is a lifelong journey of recovery, prevention, and empowerment. Born from the passion of two young physiotherapists, our aim is to make high-quality rehabilitation accessible, blending evidence-based care with compassion and innovation.
+          </p>
+        <div class="about-flex">
+          <div class="about-text">
+            <h3>Our Founders</h3>
+            <p>
+              <strong>Dr. Keerthana, PT, MIAP (Reg. No: 69211)</strong> is the Founder of Infinity Physio and Rehab. A graduate of Meenakshi College of Physiotherapy, she completed her internships at MAHER, Gericare, and <b>Tamilnadu Government Multi-Super-Speciality Hospital (Omanthurar)</b>, gaining expertise across orthopaedics, geriatrics, neurology, oncology, and sports rehabilitation. Currently pursuing her Master’s in Orthopaedics, she is <b>passionate about musculoskeletal and occupational health</b>, with research focused on musculoskeletal disorders among weavers and factory workers.
+            </p>
+            <p>
+              <strong>Dr. Tamilvasan PT</strong> is the Co-Founder, CEO and Chief Consultant Physiotherapist. He completed his training at MAHER, NIPMED and <b>Tamilnadu Government Multi-Super-Speciality Hospital (Omanthurar)</b>, with expertise in pediatrics, neurology, oncology, sports, and cardiology rehabilitation. Inspired by <b>Dr. T. Bhuvaneshwaran PT, Chief Consultant Physiotherapist</b>, who has been <b>a great mentor and the only reason for choosing this field</b>, Dr. Tamilvasan’s philosophy is deeply rooted in guidance and commitment to excellence. His research on fear of falling in the elderly reflects his interest and <b>specialised in geriatric physiotherapy</b>. With leadership and dedication, he drives the vision of Infinity Physio and Rehab as a trusted rehabilitation brand.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="vision.jpeg" alt="Founders of Infinity Physio and Rehab">
+          </div>
+        </div>
+        <div class="about-flex reverse">
+          <div class="about-text">
+            <h3>Our Vision</h3>
+            <p>
+              To be a trusted leader in physiotherapy and rehabilitation, empowering individuals to achieve pain-free movement, independence, and long-term wellness, while redefining recovery standards through innovation, compassion, and professional excellence.
+            </p>
+
+            <h3>Our Mission</h3>
+            <p>
+              Deliver comprehensive, evidence-based physiotherapy services.<br>
+              Empower patients through awareness, prevention, and recovery.<br>
+              Expand accessibility through clinics, rural camps, and community programs.<br>
+              Build Infinity Physio and Rehab into a premier brand in rehabilitation.
+            </p>
+
+            <h3>Our Core Values</h3>
+            <ul class="about-text">
+              <li><strong>Compassion</strong> – treating every patient with empathy and respect.</li>
+              <li><strong>Commitment</strong> – ensuring consistent and high-quality care.</li>
+              <li><strong>Community</strong> – reaching people through camps and awareness programs.</li>
+              <li><strong>Collaboration</strong> – continuous learning and teamwork.</li>
+              <li><strong>Credibility</strong> – ethical, evidence-based, and trusted practice.</li>
+            </ul>
+          </div>
+          <div class="about-image">
+            <img src="abot2.jpeg" alt="Vision of Infinity Physio and Rehab" style="max-width:440px;">
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    </div> <!-- Close padding wrapper -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Infinity Physio and Rehab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- Hamburger menu toggle logic ---
+      const navToggle = document.querySelector('.nav-toggle');
+      const navBar = document.querySelector('.main-nav-bar');
+      const closeBtn = document.querySelector('.close-btn');
+
+      // Function to close the menu
+      function closeMobileMenu() {
+        navBar.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // 1. Open/close menu with the hamburger toggle
+      navToggle.addEventListener('click', function () {
+        const expanded = navBar.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', expanded);
+      });
+
+      // 2. Close menu with the new 'X' button
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMobileMenu);
+      }
+
+      // 3. Close menu when a nav link is clicked
+      navBar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // 4. Close menu when clicking outside of it
+      document.addEventListener('click', function (event) {
+        const isClickInsideNav = navBar.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+        
+        if (navBar.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
