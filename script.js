@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const welcomeVideo = document.querySelector(isMobile ? '.welcome-video-mobile' : '.welcome-video-desktop');
+  document.querySelectorAll('.welcome-video').forEach(video => {
+    if (video !== welcomeVideo) {
+      video.pause();
+      video.style.display = 'none';
+    }
+  });
+  if (welcomeVideo) {
+    window.setTimeout(() => {
+      welcomeVideo.style.opacity = '0';
+      window.setTimeout(() => {
+        welcomeVideo.style.display = 'none';
+        welcomeVideo.pause();
+      }, 1000);
+    }, 3000);
+  }
+
   const menuButton = document.querySelector('.menu-button');
   const navLinks = document.querySelector('.nav-links');
   if (menuButton && navLinks) {
@@ -20,23 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#formStatus').textContent = 'Opening WhatsApp with your booking request…';
   });
 
-  const serviceDetails = {
-    geriatric: ['Geriatric Physiotherapy & Fall Prevention', 'Our geriatric programme supports older adults in maintaining independence, confidence and safe mobility.', ['Balance and fall-prevention training', 'Strength, flexibility and walking exercises', 'Support for arthritis, osteoporosis and post-surgical recovery']],
-    chronic: ['Chronic Pain Management', 'We use a personalised, multidisciplinary approach to reduce persistent pain and improve everyday function.', ['Movement and exercise-based treatment', 'Education for pain self-management', 'Lifestyle and activity guidance']],
-    postoperative: ['Post-Surgical Rehabilitation', 'A staged rehabilitation plan helps you recover safely, rebuild strength and return to daily activities after surgery.', ['Individual recovery goals', 'Mobility and strength progression', 'Guidance for safe return to activity']],
-    sports: ['Sports Injury Recovery', 'Targeted rehabilitation for athletic injuries, designed to help you return to your sport confidently and safely.', ['Acute and chronic injury care', 'Sport-specific strengthening', 'Return-to-play planning']],
-    neurological: ['Neurological Rehabilitation', 'Rehabilitation for people living with stroke, spinal cord injury, Parkinson’s disease and related neurological conditions.', ['Functional movement training', 'Balance and coordination support', 'Independence-focused rehabilitation']],
-    pediatric: ['Pediatric Physiotherapy', 'Developmental and rehabilitative physiotherapy to help children build movement skills and reach their potential.', ['Support for developmental delay', 'Individualised family-centred care', 'Play-based therapeutic movement']],
-    women: ["Women's Health Physiotherapy", 'Sensitive, individualised support for women at every stage of life.', ['Prenatal and postnatal care', 'Pelvic-floor rehabilitation', 'Osteoporosis and mobility support']],
-    fitness: ['Fitness & Wellness Programs', 'Proactive programmes that support healthy movement, injury prevention and long-term physical wellbeing.', ['Mobility and strength building', 'Injury-prevention advice', 'Sustainable fitness guidance']],
-    ergonomic: ['Ergonomic Solutions & Postural Correction', 'Practical assessment and exercise support to make work and everyday movement more comfortable.', ['Workstation and posture guidance', 'Movement-break strategies', 'Injury-risk reduction']],
-    headache: ['Headache & Migraine Management', 'A multimodal approach combining physiotherapy, exercise and lifestyle guidance to manage recurring headaches.', ['Neck and posture assessment', 'Manual therapy when appropriate', 'Self-management strategies']]
-  };
+  const serviceDetails = window.originalServiceDetails;
   const modal = document.querySelector('#serviceModal');
   const modalContent = document.querySelector('#serviceModalContent');
   document.querySelectorAll('.learn-more[data-service]').forEach(button => button.addEventListener('click', event => {
-    event.preventDefault(); const detail = serviceDetails[button.dataset.service]; if (!detail || !modal || !modalContent) return;
-    modalContent.innerHTML = `<p class="eyebrow">Service details</p><h2>${detail[0]}</h2><p>${detail[1]}</p><ul>${detail[2].map(item => `<li>${item}</li>`).join('')}</ul><a class="button" href="appointment.html">Book an appointment →</a>`;
+    event.preventDefault();
+    const detail = serviceDetails?.[button.dataset.service];
+    if (!detail) {
+      console.error(`Service details not found for "${button.dataset.service}".`);
+      return;
+    }
+    if (!modal || !modalContent) {
+      console.error('The service details dialog is missing from this page.');
+      return;
+    }
+    modalContent.innerHTML = `<div class="service-modal-content">${detail.content}<a class="button" href="appointment.html">Book an appointment →</a></div>`;
     modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
   }));
   document.querySelectorAll('[data-close-modal]').forEach(button => button.addEventListener('click', () => { modal?.classList.remove('open'); modal?.setAttribute('aria-hidden', 'true'); }));
