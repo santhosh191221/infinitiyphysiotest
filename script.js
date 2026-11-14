@@ -29,6 +29,45 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰';
     }));
   }
+  const footer = document.querySelector('footer');
+  if (footer && !footer.querySelector('.social-links')) {
+    footer.classList.add('footer');
+    const socialNav = document.createElement('nav');
+    socialNav.className = 'social-links';
+    socialNav.setAttribute('aria-label', 'Social media');
+    [
+      ['Instagram', 'https://instagram.com/infinity_physio_and_rehab/'],
+      ['LinkedIn', 'https://www.linkedin.com/in/infinity-physio-and-rehab-398389384/'],
+      ['WhatsApp', 'https://wa.me/919600619608']
+    ].forEach(([label, url]) => {
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = label;
+      socialNav.append(link);
+    });
+    footer.append(socialNav);
+  }
+  const reviewSlides = [...document.querySelectorAll('.review-slide')];
+  const reviewPosition = document.querySelector('.review-position');
+  if (reviewSlides.length && reviewPosition) {
+    let activeReview = reviewSlides.findIndex(slide => slide.classList.contains('active'));
+    if (activeReview < 0) activeReview = 0;
+    const showReview = direction => {
+      activeReview = (activeReview + direction + reviewSlides.length) % reviewSlides.length;
+      reviewSlides.forEach((slide, index) => {
+        const isActive = index === activeReview;
+        slide.hidden = !isActive;
+        slide.classList.toggle('active', isActive);
+      });
+      reviewPosition.textContent = `${activeReview + 1} of ${reviewSlides.length}`;
+    };
+    document.querySelectorAll('[data-review-direction]').forEach(button => button.addEventListener('click', () => {
+      showReview(Number(button.dataset.reviewDirection));
+    }));
+    window.setInterval(() => showReview(1), 5000);
+  }
   const form = document.querySelector('#appointmentForm');
   if (form) form.addEventListener('submit', event => {
     event.preventDefault();

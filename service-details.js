@@ -32,7 +32,7 @@ window.originalServiceDetails = {
                 <li><strong>Supports Mental Health:</strong> Maintaining mobility and reducing discomfort can significantly improve mental well-being, reducing the feelings of isolation and depression that often accompany physical limitations.</li>
                 <li><strong>Improves Post-Surgical Recovery:</strong> For seniors recovering from surgeries like hip or knee replacements, physiotherapy speeds up rehabilitation, promoting a faster and safer recovery process.</li>
             </ul>
-            <h3>By focusing on each patientâ€™s individual needs and goals, our geriatric physiotherapy program ensures that older adults can lead healthier, more active, and independent lives. Let us help you or your loved ones navigate the aging process with confidence, mobility, and comfort.</h3>
+            <p>By focusing on each patient's individual needs and goals, our geriatric physiotherapy program ensures that older adults can lead healthier, more active, and independent lives. Let us help you or your loved ones navigate the aging process with confidence, mobility, and comfort.</p>
         `
     },
       "chronic": {
@@ -129,11 +129,11 @@ window.originalServiceDetails = {
         content: `
             <h2>Sports Injury Recovery</h2>
             <div class="sports-icons">
-                <span class="sport-icon">ðŸƒâ€â™‚ï¸</span>
-                <span class="sport-icon">âš½</span>
-                <span class="sport-icon">ðŸŠâ€â™€ï¸</span>
-                <span class="sport-icon">ðŸ€</span>
-                <span class="sport-icon">ðŸŽ¾</span>
+                <span class="sport-icon">&#x1F3C3;</span>
+                <span class="sport-icon">&#x26BD;</span>
+                <span class="sport-icon">&#x1F3CA;</span>
+                <span class="sport-icon">&#x1F3C0;</span>
+                <span class="sport-icon">&#x1F3BE;</span>
             </div>
             <h3>Introduction</h3>
             <p>Sports injuries can range from minor sprains to severe ligament tears, and recovery requires a tailored approach to ensure athletes return to their sport as quickly and safely as possible. Our Sports Injury Recovery program provides comprehensive treatment and rehabilitation for both acute injuries and chronic conditions, addressing each injury with an individualized plan. Whether you're a professional athlete or a weekend warrior, we are committed to helping you recover fully, optimize performance, and reduce the risk of future injuries.</p>
@@ -161,7 +161,7 @@ window.originalServiceDetails = {
             <ul>
                 <li><strong>Accelerated Recovery:</strong> With specialized physiotherapy techniques, athletes recover faster, reducing downtime and helping them return to their sport sooner without compromising their health or performance.</li>
                 <li><strong>Prevention of Re-Injury:</strong> Physiotherapists focus on strengthening the injured area and addressing any underlying weaknesses or imbalances, reducing the risk of re-injury once the athlete returns to activity.</li>
-                <li><strong>Improved Performance:</strong> Post-injury rehabilitation doesn't just focus on recoveryâ€”it also offers opportunities to improve performance. Through strengthening exercises, flexibility training, and technique refinement, athletes can perform better than before the injury.</li>
+                <li><strong>Improved Performance:</strong> Post-injury rehabilitation doesn't just focus on recovery—it also offers opportunities to improve performance. Through strengthening exercises, flexibility training, and technique refinement, athletes can perform better than before the injury.</li>
                 <li><strong>Restored Confidence:</strong> Injuries can be mentally and emotionally taxing for athletes. Physiotherapy helps athletes regain their confidence by providing education and encouragement, allowing them to return to sport with greater confidence and a reduced fear of reinjury.</li>
                 <li><strong>Holistic Recovery:</strong> The rehabilitation process addresses not only the physical recovery but also the mental and emotional aspects of injury recovery. Our team supports athletes in coping with the psychological challenges of returning to sport.</li>
             </ul>
@@ -183,11 +183,11 @@ window.originalServiceDetails = {
         content: `
             <h2>Neurological Rehabilitation</h2>
             <div class="neuro-icons">
-                <span class="neuro-icon">ðŸ§ </span>
-                <span class="neuro-icon">ðŸš¶â€â™‚ï¸</span>
-                <span class="neuro-icon">ðŸ‹ï¸â€â™€ï¸</span>
-                <span class="neuro-icon">ðŸ§˜</span>
-                <span class="neuro-icon">ðŸ—£ï¸</span>
+                <span class="neuro-icon">&#x1F9E0;</span>
+                <span class="neuro-icon">&#x1F6B6;</span>
+                <span class="neuro-icon">&#x1F3CB;</span>
+                <span class="neuro-icon">&#x1F9D8;</span>
+                <span class="neuro-icon">&#x1F5E3;</span>
             </div>
             
             <h3>Introduction</h3>
@@ -241,11 +241,11 @@ window.originalServiceDetails = {
         content: `
             <h2>Pediatric Physiotherapy</h2>
             <div class="pediatric-icons">
-                <span class="pediatric-icon">ðŸ‘¶</span>
-                <span class="pediatric-icon">ðŸ§©</span>
-                <span class="pediatric-icon">ðŸš¸</span>
-                <span class="pediatric-icon">ðŸƒâ€â™‚ï¸</span>
-                <span class="pediatric-icon">ðŸ‘¨â€ðŸ‘©â€ðŸ‘§â€ðŸ‘¦</span>
+                <span class="pediatric-icon">&#x1F476;</span>
+                <span class="pediatric-icon">&#x1F9E9;</span>
+                <span class="pediatric-icon">&#x1F697;</span>
+                <span class="pediatric-icon">&#x1F3C3;</span>
+                <span class="pediatric-icon">&#x1F46A;</span>
             </div>
             
             <h3>Introduction</h3>
@@ -275,7 +275,7 @@ window.originalServiceDetails = {
                 <li><strong>Improved Mobility:</strong> Physiotherapy enhances the ability to move independently, whether through walking, running, or other activities, allowing children to engage fully in social and physical activities.</li>
                 <li><strong>Increased Confidence:</strong> As children develop their physical skills and independence, their self-esteem and confidence improve, enabling them to participate in school, play, and other activities without limitation.</li>
                 <li><strong>Prevention of Deformities:</strong> By promoting healthy movement patterns and posture, physiotherapy reduces the risk of musculoskeletal deformities that may arise due to conditions like cerebral palsy.</li>
-                <li><strong>Enhanced Functional Abilities:</strong> Physiotherapy works to improve not just strength and movement, but also the functional abilities that allow a child to interact with their environmentâ€”whether it's in the classroom, at home, or in social settings.</li>
+                <li><strong>Enhanced Functional Abilities:</strong> Physiotherapy works to improve not just strength and movement, but also the functional abilities that allow a child to interact with their environment—whether it's in the classroom, at home, or in social settings.</li>
                 <li><strong>Long-Term Benefits:</strong> Early intervention through pediatric physiotherapy can prevent long-term complications, improve quality of life, and provide lasting benefits in terms of physical function and independence.</li>
             </ul>
             
@@ -296,11 +296,11 @@ window.originalServiceDetails = {
         content: `
             <h2>Women's Health Physiotherapy</h2>
             <div class="womens-health-icons">
-                <span class="womens-health-icon">ðŸ¤°</span>
-                <span class="womens-health-icon">ðŸ’ª</span>
-                <span class="womens-health-icon">ðŸ§˜â€â™€ï¸</span>
-                <span class="womens-health-icon">ðŸ¦´</span>
-                <span class="womens-health-icon">â¤ï¸</span>
+                <span class="womens-health-icon">&#x1F930;</span>
+                <span class="womens-health-icon">&#x1F4AA;</span>
+                <span class="womens-health-icon">&#x1F9D8;</span>
+                <span class="womens-health-icon">&#x1F9B4;</span>
+                <span class="womens-health-icon">&#x2764;&#xFE0F;</span>
             </div>
             
             <h3>Introduction</h3>
@@ -398,7 +398,7 @@ window.originalServiceDetails = {
 <h3>Introduction</h3>
 <p>Our Ergonomic Solutions & Postural Correction program is designed to address and correct poor posture and workplace-related musculoskeletal issues. We provide tailored assessments and interventions to enhance comfort, productivity, and health in the workplace. By optimizing workspaces and promoting good posture, we help individuals reduce strain, prevent injuries, and improve overall well-being.</p>
 <h3>What It Highlights</h3>
-<p>Ergonomics is the science of designing the work environment to fit the individualâ€™s needs, helping reduce discomfort and enhance performance. Postural correction focuses on identifying and correcting improper body alignment, which can lead to chronic pain, injury, and fatigue. Key features of our program include:</p>
+<p>Ergonomics is the science of designing the work environment to fit the individual's needs, helping reduce discomfort and enhance performance. Postural correction focuses on identifying and correcting improper body alignment, which can lead to chronic pain, injury, and fatigue. Key features of our program include:</p>
 <ul>
     <li>Workplace Assessments: Detailed evaluations of workstation setup and ergonomics to identify risk factors and areas for improvement.</li>
     <li>Posture Education: Guidance on maintaining proper posture during daily tasks, including sitting, standing, and moving.</li>
